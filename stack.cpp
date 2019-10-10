@@ -1,6 +1,9 @@
-//
-// Created by 51707 on 2019/10/9.
-//
+/*
+* Date    : 2019/10/09
+* Author  : WANG JINGE
+* Email   : wang.j.au@m.titech.ac.jp
+* Standard: C++14
+*/
 
 
 #include <iostream>
