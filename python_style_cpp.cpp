@@ -18,5 +18,16 @@ cout << x;
 
 // 元组
 auto tp = make_tuple(5, 6, 7);
-cout << get<0>(tp);
+cout << get<0>(tp);  // 5
+int x, y, z;
+tie(x, y, z) = tp;  // 类似python解包
 
+// 统一的初始化
+auto myList = vector<int>{3,2,4,6};
+myList.push_back(0);
+
+auto myDict = unordered_map<int, const char*>{{5, "foo"}, {6, "bar"}};
+cout<< myDict[5];
+
+// lambda表达式
+sort(myList.begin(), myList.end(), [](int x, int y){ return abs(x) < abs(y);})
