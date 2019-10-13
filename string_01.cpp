@@ -30,7 +30,7 @@ int main() {
 
     str4.clear();
 
-    int len = str5.length(), len2 = str5.size();
+    int len = str5.length(), len2 = str5.size(); // string更推荐用length()
 
     char ch = str5.at(2), ch2 = str5[2];
 
@@ -42,7 +42,7 @@ int main() {
     const char* charstr = str5.c_str();
     printf("%s\n", charstr);
 
-    str5.append("extension"); // str5 += "extension" is ok, but slightly slower
+    str5.append("extension"); // str5 += "extension" is ok, but slower
 
     str4.append(str6, 0, 6);
 
