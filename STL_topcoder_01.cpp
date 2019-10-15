@@ -5,6 +5,7 @@
 * Standard: C++14
 */
 
+// 特别注意其中的宏定义用法，非常有用！
 
 // Vector actually IS the array, but with some additional features.
 vector<int> v(5);
@@ -65,5 +66,44 @@ int i1 = min_element(x.begin(), x.end()) - x.begin(); // index
 sort(x.begin(), x.end());
 sort(x.rbegin(), x.rend());
 
+// By using this macros we can traverse every kind of container
+#define tr(container, it) for(auto it = container.begin(); it != container.end(); it++)
+
+#define all(c) c.begin(), c.end() // 定义宏
 vector<int> v;
+vector<int> v2;
 v.insert(1, 42);  // insert value 42 after the first
+v.insert(v, all(v2)); // insert all
+v.erase(v.begin(), v.begin()+5); // erase(iterator), delect the first 5
+
+// set can check the presence of element in O(logN)
+set<int> s;
+for(int i=1; i<= 100; i++)    // set don't have push_back, it make sense: since the order of elements in set does not matter
+    s.insert(i);
+
+for(int i = 2; i <= 100; i += 2)
+    s.erase(i);
+
+int n = int(s.size());
+
+// set is non-linear container, so can't use index to traverse, but use iterator instead.
+int r =0;
+for(auto i=s.begin(); it != s.end(); it++)
+    r += *it;
+// more elegent way, use macros
+set< pair< string, pair<int, vector<int> > > > ss;
+tr(ss, it){
+    r += it->second.first; // or (*it).second.first
+}
+
+// global algorithm find() is O(N), but for set.find() is O(logN)
+// While searching in set and map (and also in multiset/multimap, hash_map/hash_set, etc.) do not use global find
+if(s.find(42) != s.end())
+    cout << "find it!";
+
+if(s.count(42)) {}  // also in O(logN)
+
+// 查找的宏定义
+#define present(container, element) (container.find(element) != container.end())
+#define vpresent(container, element) (find(container.begin(), container.end(), element) != container.end())  // for vector, use globel find (vector don't have find itself)
+
