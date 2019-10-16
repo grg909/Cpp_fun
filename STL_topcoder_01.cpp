@@ -107,3 +107,32 @@ if(s.count(42)) {}  // also in O(logN)
 #define present(container, element) (container.find(element) != container.end())
 #define vpresent(container, element) (find(container.begin(), container.end(), element) != container.end())  // for vector, use globel find (vector don't have find itself)
 
+// map, may[] will create new element when key don't exit.
+void f(const map<string, int>& m){
+    if(m["the morning"] == 42) { // error, can't use [] on const map
+    }
+    if(m.find("the morning") != m.end() and m.find("the morning")->second == 42) {
+        cout << "this is correct" << endl;
+    }
+}
+
+// set and map is realized by red-black trees.
+
+set<int> s;
+auto it = s.find(42);
+auto it1 = it, it2 = it;
+it1--;
+it2++;
+int a = *it1, b = *it2;
+// if 42 exit not only once, then ‘a’ will contain the first neighbor of 42 to the left and ‘b’ the first one to the right.
+
+// summary
+typedef vector< int > vi;
+typedef vector< vi > vvi;
+typedef pair< int,int > ii;
+#define sz(a) int((a).size())
+#define pb push_back
+#define all(c) (c).begin(),(c).end()
+#define tr(c,i) for(typeof((c)).begin() i = (c).begin(); i != (c).end(); i++)
+#define present(c,x) ((c).find(x) != (c).end())
+#define cpresent(c,x) (find(all(c),x) != (c).end())
