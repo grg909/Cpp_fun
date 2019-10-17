@@ -5,6 +5,13 @@
 * Standard: C++14
 */
 
+/* It is not good practice to begin investigating the full functionality of some STL container
+ * during the heat of a Single Round Match.
+ * If you are not familiar with the container you are about to use, you'd be better off using vector or map/set.
+ * For example, stack can always be implemented via vector, and it’s much faster to act this way
+ * if you don’t remember the syntax of stack container.
+*/
+
 
 int arr[] = {1,2,3,4};
 
