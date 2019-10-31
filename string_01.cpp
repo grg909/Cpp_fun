@@ -61,6 +61,9 @@ int main() {
     // C++11便利！ Converts a numeric value to std::string.
     string s = to_string(42);
 
+    // 比较两个string是否相等（一模一样），最方便
+    str1 == str2;
+
     return 0;
 }
 
