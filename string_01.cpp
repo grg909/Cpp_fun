@@ -9,6 +9,7 @@
 // C++ string class use char array to store
 #include <string>
 #include <iostream>
+
 using namespace std;
 
 int main() {
@@ -39,7 +40,7 @@ int main() {
     char ch_b = str5.back();  // str5[len -1]
 
     // c_str returns null terminated char array version of string
-    const char* charstr = str5.c_str();
+    const char *charstr = str5.c_str();
     printf("%s\n", charstr);
 
     str5.append("extension"); // str5 += "extension" is ok, but slower
@@ -53,9 +54,12 @@ int main() {
     cout << str5.substr(7) << endl;
 
     //  erase(a, b) deletes b characters at index a
-    str5.erase(7,4);
+    str5.erase(7, 4);
 
     str5.repalace(2, 7, "ese are test");
+
+    // C++11便利！ Converts a numeric value to std::string.
+    string s = to_string(42);
 
     return 0;
 }
