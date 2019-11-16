@@ -52,7 +52,13 @@ auto q = lower_bound(all(vt), 5);
 auto p = upper_bound(all(vt), 5);
 
 // erases the duplicate occurrences in sorted vector in a single line.
+// before using unique, must make sure vt is sorted !!!
+sort(all(vt));
 vt.erase(unique(all(vt)),vt.end());
+
+// Transforms the range [first,last) into a range with all the elements that compare equal to val removed,
+// and returns an iterator to the new end of that range.
+remove(all(vt), 1);
 
 // 遍历unordered_map
 unordered_map<int, int> mp;
