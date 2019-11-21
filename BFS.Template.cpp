@@ -5,6 +5,8 @@
 * Standard: C++14
 */
 
+// BFS重点：构建图，找到start point, end point, 然后如何找the neighbors of cur
+
 
 // Template 1, won't be possible visit a node twice
 // Return the length of the shortest path between root and target node.
